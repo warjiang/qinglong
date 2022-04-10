@@ -16,6 +16,7 @@ export default defineConfig({
   },
   favicon: '/images/g5.ico',
   publicPath: "/ql",
+
   proxy: {
     '/api/public': {
       target: 'http://127.0.0.1:5400/',
