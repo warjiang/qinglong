@@ -37,8 +37,6 @@ jobs:
           GITHUB_REPO: github.com/${{ github.repository_owner }}/qinglong-static
           GITHUB_BRANCH: ${{ github.ref_name }}
         run: |
-          echo $GITHUB_REPO
-          echo $GITHUB_BRANCH
           mkdir -p tmp
           cd ./tmp
           cp -rf ../static/* ./
