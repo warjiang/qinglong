@@ -15,6 +15,7 @@ export default defineConfig({
     loading: '@/components/pageLoading',
   },
   favicon: '/images/g5.ico',
+  base: '/ql/',
   publicPath: "/ql/",
   runtimePublicPath: true,
   proxy: {
