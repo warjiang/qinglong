@@ -265,7 +265,7 @@ update_qinglong() {
         echo -e "\n更新青龙源文件失败，请检查原因...\n"
     fi
 
-    local url="https://github.com/whyour/qinglong-static.git"
+    local url="https://github.com/warjiang/qinglong-static.git"
     if [[ -d ${ql_static_repo}/.git ]]; then
         reset_romote_url ${ql_static_repo} ${url} ${primary_branch}
         git_pull_scripts ${ql_static_repo} ${primary_branch}
@@ -276,7 +276,7 @@ update_qinglong() {
         echo -e "\n更新青龙静态资源成功...\n"
         local static_version=$(cat $dir_root/src/version.ts | perl -pe "s|.*\'(.*)\';\.*|\1|" | head -1)
         echo -e "\n当前版本 $static_version...\n"
-        
+
         rm -rf $dir_static/*
         cp -rf $ql_static_repo/* $dir_static
         if [[ $no_restart != "no-restart" ]]; then
@@ -416,7 +416,7 @@ gen_list_repo() {
             cp -f $_file "${dir_scripts}/${uniq_path}/${file_path}"
         done
     fi
-    
+
     if [[ -d $dir_dep ]]; then
         cp -rf $dir_dep/* "${dir_scripts}/${uniq_path}" &>/dev/null
     fi
