@@ -1,6 +1,6 @@
 FROM node:alpine
 
-ARG QL_MAINTAINER="whyour"
+ARG QL_MAINTAINER="warjiang"
 LABEL maintainer="${QL_MAINTAINER}"
 ARG QL_URL=https://github.com/${QL_MAINTAINER}/qinglong.git
 ARG QL_BRANCH=master
@@ -54,5 +54,5 @@ RUN set -x \
     && mkdir -p ${QL_DIR}/static \
     && cp -rf /static/* ${QL_DIR}/static \
     && rm -rf /static
-    
+
 ENTRYPOINT ["./docker/docker-entrypoint.sh"]
